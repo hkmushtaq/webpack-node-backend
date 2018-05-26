@@ -1,0 +1,44 @@
+{
+  "name": "webpack-node-backend",
+  "version": "0.1.0",
+  "description": "A very lightweight boilerplate project for a node backend compiled with webpack",
+  "main": "src/index.js",
+  "repository": "",
+  "author": "hkmushtaq",
+  "license": "N/A",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build:dev:watch",
+    "build": "npm run check-types && webpack --config webpack.production.config.js",
+    "build:dev": "webpack --config webpack.development.config.js",
+    "build:dev:watch": "webpack --config webpack.development.config.js --watch",
+    "start": "nodemon dist/rele/server.js",
+    "start:dev": "nodemon dist/dev/server.js",
+    "fix-style": "eslint --fix ./",
+    "check-types": "flow"
+  },
+  "pre-commit": [
+    "fix-style",
+    "check-types"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.47.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-babel-webpack-plugin": "^1.1.1",
+    "flow-bin": "^0.73.0",
+    "nodemon": "^1.17.5",
+    "nodemon-webpack-plugin": "^4.0.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.12.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
+  },
+  "dependencies": {}
+}
